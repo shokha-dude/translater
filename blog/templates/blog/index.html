@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="{% static 'blog/css/Semantic/semantic.min.css' %}">
+</head>
+<body>
+  <div class="ui header segment">
+    <div class="ui container">
+      <h1 class="ui header">Онлайн словарь</h1>
+      <div class="ui divider"></div>
+      <p>Бистро, удобно и бесплатно</p>
+    </div>
+  </div>
+  <div class="ui container">
+      <div class="ui placeholder segment">
+          <div class="ui icon header">
+              Русско-узбекский, Узбекско-русский словарь
+          </div>
+          <div class="inline" style="width:90%;">
+              <div class="ui massive form search">
+                  <div class="ui icon input" style="width:100%;">
+                      <input class="prompt" type="text" placeholder="Напишите слово...">
+                      <i class="search link icon"></i>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="ui piled segment">
+          <h4 class="ui header">Результат</h4>
+          <table class="ui table">
+              <thead>
+                <tr>
+                  <td>Русский</td><td>Узбекский</td>
+                </tr>
+              </thead>
+          </table>
+      </div>
+  </div>
+</body>
+</html>
