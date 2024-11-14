@@ -22,10 +22,10 @@
           </div>
           <div class="inline" style="width:90%;">
               <div class="ui massive form search">
-                  <div class="ui icon input" style="width:100%;">
-                      <input class="prompt" type="text" placeholder="Напишите слово...">
+                  <form method="GET" action="/" class="ui icon input" style="width:100%;">
+                      <input name="q" value="{{ q }}" class="prompt" type="text" placeholder="Напишите слово...">
                       <i class="search link icon"></i>
-                  </div>
+                  </form>
               </div>
           </div>
       </div>
@@ -34,9 +34,20 @@
           <table class="ui table">
               <thead>
                 <tr>
-                  <td>Русский</td><td>Узбекский</td>
+                  <th><i class="russia flag"></i>Русский</th>
+                    <th><i class="uzbekistan flag"></i>Узбекский</th>
                 </tr>
               </thead>
+              <tbody>
+              {% if result %}
+              {% for w in result %}
+              <tr>
+                  <td>{{ w.russian }}</td>
+                  <td>{{ w.uzbek }}</td>
+              </tr>
+              {% endfor %}
+              {% endif %}
+              </tbody>
           </table>
       </div>
   </div>
