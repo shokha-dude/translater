@@ -6,7 +6,7 @@ from .models import Dictionary
 def index(request):
     word = request.GET.get('q', '')
     if word and word != '':
-        result = Dictionary.objects.filter(russian=word).all()
+        result = Dictionary.objects.filter(russian__icontains=word).all()[:3]
     else:
         result = None
     return render(request, 'blog/index.html', {'q':word, 'result': result})
